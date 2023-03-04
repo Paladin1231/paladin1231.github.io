@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cambridge Dictionary Search</title>
+	<style>
+		iframe {
+			width: 100%;
+			height: 500px;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>Cambridge Dictionary Search</h1>
+	<input type="text" id="searchTerm" placeholder="Enter search term" onkeydown="if (event.keyCode == 13) search();">
+	<button onclick="search()">Search</button>
+	<br><br>
+	<iframe id="searchResults"></iframe>
+
+	<script>
+		function search() {
+			var searchTerm = document.getElementById("searchTerm").value;
+			var iframe = document.getElementById("searchResults");
+			iframe.src = "https://dictionary.cambridge.org/search/english-chinese-traditional/direct/?q=" + searchTerm;
+		}
+	</script>
+</body>
+</html>
